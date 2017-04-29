@@ -1,0 +1,30 @@
+{
+  "presets": ["react"],
+  "plugins": [
+    "react-require",
+    "transform-class-properties",
+    "transform-export-extensions"
+  ],
+  "env": {
+    "test": {
+      "presets": ["es2015", "stage-2", "power-assert"],
+      "plugins": [
+        ["babel-plugin-espower", {
+          "embedAst": true,
+          "patterns": [
+            "t.truthy(value, [message])",
+            "t.falsy(value, [message])",
+            "t.true(value, [message])",
+            "t.false(value, [message])",
+            "t.is(value, expected, [message])",
+            "t.not(value, expected, [message])",
+            "t.deepEqual(value, expected, [message])",
+            "t.notDeepEqual(value, expected, [message])",
+            "t.regex(contents, regex, [message])",
+            "t.notRegex(contents, regex, [message])"
+          ]
+        }]
+      ]
+    }
+  }
+}
